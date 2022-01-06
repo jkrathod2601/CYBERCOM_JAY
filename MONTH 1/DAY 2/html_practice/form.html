@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FORM</title>
+</head>
+
+<body>
+    <style>
+        form {
+            border: 2px solid black;
+            padding: 2%;
+            font-size: 20px;
+        }
+
+        input {
+            margin: 7px;
+        }
+
+        label {
+            font-weight: 200;
+        }
+
+        select {
+            width: 300px;
+            height: 30px;
+        }
+    </style>
+    <center>
+        <h3>HTML FORM</h3>
+    </center>
+    <form action="/sendata.php" method="post">
+        <label for="">name:
+            <input type="text" placeholder="name" name="username">
+        </label><br>
+        <label for="">password:
+            <input type="password" placeholder="password" name="password">
+        </label><br>
+        <label for="">select gender:</label>
+        <input type="radio" name="gender" id="male"><label for="">male</label>
+        <input type="radio" name="gender" id="female"><label for="">female</label>
+        <br>
+        <label for="">select your sport:</label>
+        <input type="checkbox" name="sport" id="cricket"><label for="">cricket</label>
+        <input type="checkbox" name="sport" id="kho kho"><label for="">kho kho</label>
+        <input type="checkbox" name="sport" id="cycling"><label for="">cycling</label>
+        <input type="checkbox" name="sport" id="swiming"><label for="">swiming</label>
+        <br>
+        <label for="">file select:</label>
+        <input type="file" name="upload" id="file">
+        <br><br>
+        <label for="">address:</label>
+        <textarea name="address" id="address-info" cols="30" rows="2" placeholder="enter your address here"></textarea>
+        <br>
+        <label for="">select your city:</label>
+        <select name="city" id="city_name">
+            <option value="bhv">bhavnagar</option>
+            <option value="guj">gujarat</option>
+            <option value="ind">india</option>
+        </select>
+        <br><br>
+        <input type="submit">
+        <input type="reset">
+    </form>
+</body>
+
+</html>

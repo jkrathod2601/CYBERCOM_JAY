@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practicle_8</title>
+    <link rel="stylesheet" href="practicle_8.css">
+</head>
+<body>
+    <div class="main">
+        <div class="form">
+            <form action="sample.html">
+                <fieldset>
+                    <legend>
+                        Personal information
+                    </legend>
+                    <label for="">First Name <span class="required">*</span></label>
+                    <input type="text" name="first_name" required><br>
+                    <label for="">Last Name</label>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="last_name"><br>
+                    <br><label for="">Date Of Birth <span class="required">*</span></label></label>
+                    &nbsp;&nbsp;&nbsp;<select name="month" id="month" required></select>&nbsp;&nbsp;&nbsp;
+                    <select name="day" id="day" required></select>&nbsp;&nbsp;&nbsp;
+                    <select name="year" id="year" required></select><br><br>
+                    <label for="">Gender</label>
+                    <select name="gender" id="gene">
+                        <option value="male">Male</option>
+                        <option value="female">Feamale</option>
+                        <option value="other">other</option>
+                    </select>
+                </fieldset>
+
+                <fieldset>
+                    <legend>
+                        Account information
+                    </legend>
+                    <label for="">email <span class="required">*</span></label></label>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp<input type="email" required><br>
+                    <small class="form-text text-muted">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp
+                        &nbsp;&nbsp;&nbsp;
+                        (Your Email address will be your username)
+                    </small><br>
+                    <label for="">Re type email</label>
+                    <input type="email" required><br>
+                    <label for="">password <span class="required">*</span></label></label>
+                                        
+                    <input type="password" pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" required><br>
+                    <small class="form-text text-muted">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp
+                        (min 8 character,1 number,case-sensetive)
+                    </small><br>
+                    <label for="">Re type password</label>
+                    <input type="password"  required><br><br>
+                    <label for="">security quetion</label>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp
+                        &nbsp;&nbsp
+                    <select name="security_quetion" id="">
+                        <option value="what_is_your_pet_name?">what_is_your_pet_name?</option>
+                        <option value="what_is_your_car_name?">what_is_your_car_name?</option>
+                        <option value="what_is_your_city_name?">what_is_your_city_name?</option>
+                    </select><br>
+                    <label for="">security answer</label>
+                    <input type="text" name="security_answer"><br>
+                    <small class="form-text text-muted">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp
+                        
+                        (Not Case sensetive)
+                    </small><br>
+                </fieldset>
+
+                <fieldset>
+                    <legend>
+                        Contact information
+                    </legend>
+                    <label for="">address</label>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="text"><br>
+                    <label for="">city</label>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="text"><br>
+                    <label for="">state</label>
+                    <select name="state" id="state">
+                        <option value="Andhra Pradesh">Andhra Pradesh</option>
+                            <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+                            <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                            <option value="Assam">Assam</option>
+                            <option value="Bihar">Bihar</option>
+                            <option value="Chandigarh">Chandigarh</option>
+                            <option value="Chhattisgarh">Chhattisgarh</option>
+                            <option value="Dadar and Nagar Haveli">Dadar and Nagar Haveli</option>
+                            <option value="Daman and Diu">Daman and Diu</option>
+                            <option value="Delhi">Delhi</option>
+                            <option value="Lakshadweep">Lakshadweep</option>
+                            <option value="Puducherry">Puducherry</option>
+                            <option value="Goa">Goa</option>
+                            <option value="Gujarat" selected>Gujarat</option>
+                            <option value="Haryana">Haryana</option>
+                            <option value="Himachal Pradesh">Himachal Pradesh</option>
+                            <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+                            <option value="Jharkhand">Jharkhand</option>
+                            <option value="Karnataka">Karnataka</option>
+                            <option value="Kerala">Kerala</option>
+                            <option value="Madhya Pradesh">Madhya Pradesh</option>
+                            <option value="Maharashtra">Maharashtra</option>
+                            <option value="Manipur">Manipur</option>
+                            <option value="Meghalaya">Meghalaya</option>
+                            <option value="Mizoram">Mizoram</option>
+                            <option value="Nagaland">Nagaland</option>
+                            <option value="Odisha">Odisha</option>
+                            <option value="Punjab">Punjab</option>
+                            <option value="Rajasthan">Rajasthan</option>
+                            <option value="Sikkim">Sikkim</option>
+                            <option value="Tamil Nadu">Tamil Nadu</option>
+                            <option value="Telangana">Telangana</option>
+                            <option value="Tripura">Tripura</option>
+                            <option value="Uttar Pradesh">Uttar Pradesh</option>
+                            <option value="Uttarakhand">Uttarakhand</option>
+                            <option value="West Bengal">West Bengal</option>
+                    </select><br>
+                    <label for="">Zip Code</label>
+                    <input type="number" min="000001" max="999999" class="zip">&nbsp;&nbsp;
+                    <input type="text" placeholder="Optional" class="zip"><br>
+                    <label for="">Phone <span class="required">*</span></label></label>
+                    <input type="tel" class="tle" required>
+                    <select name="type_mobile" id="tele">
+                        <option value="mobile">mobile</option>
+                        <option value="telephone">telephone</option>
+                        <option value="landline">landline</option>
+                    </select>
+                </fieldset>
+                <button type="submit">SUBMIT FORM</button><br>
+                <button type="reset">RESET FORM</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const run=()=>{
+            let s1=""
+            let s2=""
+            let s3=""
+            let x=['jan','feb','mar','apr','may','jun','jul','aug','sep','auc','nov','dec']
+            let y=1999
+            let z=1
+            for(let i=0;i<12;i++){
+                y1=`<option value="${x[i]}">${x[i]}</option>`
+                s1=s1+y1
+            }
+            for(let j=0;j<31;j++){
+                s2=s2+`<option value="${j+1}">${j+1}</option>`
+            }
+            let xx1=1970
+            for(let k=0;xx1<2021;k++){
+                s3=s3+`<option value="${xx1}">${xx1}</option>`
+                xx1=xx1+1
+            }
+            document.getElementById('month').innerHTML=s1
+            document.getElementById('day').innerHTML=s2
+            document.getElementById('year').innerHTML=s3
+        }
+        run()
+    </script>
+</body>
+</html>

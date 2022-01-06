@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript</title>
+</head>
+
+<body>
+    <h3>javascript</h3>
+    <h1 id="h1tag"></h1>
+    <button onclick="run()">click here to get current time</button>
+    <script>
+        const run = () => {
+            let date = new Date()
+            document.getElementById("h1tag").innerHTML = date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds()
+        }
+    </script>
+    <noscript>
+        javascript is not supported by this browser
+    </noscript>
+</body>
+
+</html>

@@ -1,0 +1,20 @@
+.col{
+    border: 2px solid black;
+    text-align: center;
+    padding: 5%;
+    margin: 2%;
+    width: 100%;
+}
+.container{
+    margin-top: 3%;
+}
+
+ul{
+    list-style-type: none;
+}
+li{
+    border: 2px solid black;
+    width: 100%;
+    margin: 5px;
+}
+

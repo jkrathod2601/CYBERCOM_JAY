@@ -1,0 +1,58 @@
+body {
+    background-color: 	#F8F8F8;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+h1,
+p,
+writer {
+    text-align: center;
+}
+
+h1 {
+    font-weight: bold;
+}
+
+.main {
+    display: flex;
+    margin: auto;
+    flex-direction: row;
+    width: 60%;
+}
+
+.child {
+    box-shadow: 8px 8px #FFFAFA, 0.4em 0 0.4em #FFFAFA;
+    border-radius: 2%;
+    margin: 12px;
+    padding: 6px;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    text-align: center;
+}
+
+.text {
+    text-align: center;
+    border-bottom: 1px solid gray;
+    padding-bottom: 15px;
+}
+
+img {
+    height: 90px;
+    width: 90px;
+    border-radius: 50%;
+}
+
+.img {
+    margin-bottom: 9px;
+    text-align: center;
+}
+
+.name {
+    font-weight: bold;
+}
+
+.comapny {
+    color: lightgray;
+    font-size: small;
+}

@@ -1,0 +1,21 @@
+fieldset{
+    margin: 2%;
+}
+
+input , textarea , select{
+    margin-left:10% ;
+    margin-top: 5px;
+}
+
+button{
+    margin-left: 120px;
+}
+
+.dd{
+    margin-left: 4%;
+}
+
+form{
+    width: 40%;
+    margin: auto;
+}
