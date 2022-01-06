@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>table</title>
+</head>
+
+<body>
+    <style>
+        table,
+        tr,
+        td,
+        th {
+            border: 2px solid black;
+        }
+
+        thead {
+            background-color: cadetblue;
+        }
+
+        tfoot {
+            background-color: cornflowerblue;
+        }
+    </style>
+    <h3>
+        HTML TABLE
+    </h3>
+    <table>
+        <tr>
+            <th>name</th>
+            <th>age</th>
+            <th>marks</th>
+            <th>grade</th>
+        </tr>
+        <tr>
+            <td>jay</td>
+            <td>20</td>
+            <td>99</td>
+            <td>A+</td>
+        </tr>
+        <tr>
+            <td>jay</td>
+            <td>20</td>
+            <td>99</td>
+            <td>A+</td>
+        </tr>
+    </table>
+
+    <h3>
+        cell and col spacing
+    </h3>
+    <table>
+        <tr>
+            <th>name</th>
+            <th colspan="3">age,mark,grade</th>
+        </tr>
+        <tr>
+            <td>jay</td>
+            <td>20</td>
+            <td>99</td>
+            <td>A+</td>
+        </tr>
+    </table>
+    <br>
+    <table>
+        <tr>
+            <th>name</th>
+            <th>age</th>
+            <th>marks</th>
+            <th>grade</th>
+        </tr>
+        <tr>
+            <th rowspan="2">phone</th>
+            <td>jayraj</td>
+        </tr>
+        <tr>
+            <td>20</td>
+            <td>99</td>
+            <td>A+</td>
+        </tr>
+    </table>
+
+    <h3>
+        table header footer and body
+    </h3>
+    <table>
+        <thead>
+            <tr>
+                <td>jay</td>
+                <td>20</td>
+                <td>99</td>
+                <td>A+</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>jay</td>
+                <td>20</td>
+                <td>99</td>
+                <td>A+</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td>jay</td>
+                <td>20</td>
+                <td>99</td>
+                <td>A+</td>
+            </tr>
+        </tfoot>
+    </table>
+
+</body>
+
+</html>

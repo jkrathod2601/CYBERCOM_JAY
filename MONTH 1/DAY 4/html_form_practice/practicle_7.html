@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="practicle_7.css">
+
+</head>
+
+<body>
+    <form action="sample.html">
+        <fieldset>
+            <legend>Your Address</legend>
+            <label for="">First name</label>
+            &nbsp;<input type="text" name="firstname"><br>
+            <label for="">Last Name</label>
+            <input type="text" name="lastname"><br>
+            <label for="">street</label>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="text" name="street"><br>
+            <label for="">City</label>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="text" name="City">
+        </fieldset>
+
+        <fieldset>
+            <legend>Additional details</legend>
+            <label for="">Biography</label>
+            <textarea name="" id="" cols="25" rows="2"></textarea><br>
+            <label for="">Image</label>
+            &nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;
+            <input type="file" accept="image/png, image/gif, image/jpeg"><br>
+            <label for="">Age Group</label>
+            <select name="agegroup" id="">
+                <option value="0_9">0 to 9 years</option>
+                <option value="10_19">10 to 19 years</option>
+                <option value="20_29">20 to 29 years</option>
+                <option value="30_39">30 to 39 years</option>
+            </select>
+        </fieldset>
+
+        <fieldset>
+            <legend>Interest</legend>
+            <label for="">Hobbies</label>
+            <select name="hobbies" id="" multiple>
+                <option value="socker">Playing socker</option>
+                <option value="dancing">dancing</option>
+                <option value="Gardening">Gardening</option>
+                <option value="watching movie">watching movie</option>
+            </select><br><br>
+
+            <label for="">Favourit Car</label>
+            <select name="agegroup" id="">
+                <option value="BMW">BMW</option>
+                <option value="Audi">Audi</option>
+                <option value="Ferrari">Ferrari</option>
+                <option value="volvo">volvo</option>
+            </select><br><br>
+
+            <label for="">Favourit public tarnsport</label>
+            <select name="hobbies" id="" multiple class="dd">
+                <optgroup label="Ground">
+                    <option value="train">train</option>
+                    <option value="bus">bus</option>
+                </optgroup>
+                <optgroup label="Water">
+                    <option value="ship">ship</option>
+                    <option value="boat">boat</option>
+                </optgroup>
+                <optgroup label="Air">
+                    <option value="plane">Plane</option>
+                    <option value="missile">missile</option>
+                </optgroup>
+            </select>
+
+        </fieldset>
+        <button type="submit">SUBMIT FORM</button>
+        <button type="reset">RESET FORM</button>
+    </form>
+</body>
+
+</html>
