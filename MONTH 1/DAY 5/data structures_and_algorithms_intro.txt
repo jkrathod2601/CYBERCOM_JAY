@@ -1,0 +1,45 @@
+1) what is data structure? 
+ -->A data structure is a specialized format for organizing, 
+    processing, retrieving and storing data. There are
+    several basic and advanced types of data structures,
+    all designed to arrange data to suit a specific purpose.
+    Data structures make it easy for users to access and
+    work with the data they need in appropriate ways.
+
+2) what is algorithm?
+ -->An algorithm is a set of instructions for solving a
+    problem or accomplishing a task. One common example of
+    an algorithm is a recipe, which consists of specific
+    instructions for preparing a dish or meal.
+
+ --> Take an example of the destination from home to school
+     and how we find the solution of this problem with the data structure
+     with use of graph and hash map data structure we solve this problem
+ -->take an data structure example of the array and linklist and how both are
+    important for task
+ -->take an example of the party how we use which data structure is usefull when
+ -->supppose we ehave add an person that time linklist is imoportant and finding any person 
+   that time array is more usefull
+
+   ARRAY
+   _____
+   -->various java array method 
+   -->in java it's take an 32 bit=4 byte
+   -->maximum value and minimum value-2147483648 to 2147483647 int
+   -->character siz is 2 byte
+   -->double and long 8 byte
+   -->boolean 1 bit
+   -->primitive data type:define by java:int,float,double,boolean
+   -->non primitive data type:not definmed by java:array,string
+
+   Class and Object
+   ----------------
+   -->basic class and object
+   -->oop concept
+      -->inheritance
+      -->constructor
+      -->abstract
+      -->aggregation
+      -->run time and compile time polymorphism
+      -->interface
+      -->incapstulation
