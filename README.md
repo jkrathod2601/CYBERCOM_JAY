@@ -21,6 +21,12 @@
         <li>Performing a HTML from</li>
         <li>Practice of HTML and CSS in form</li>
     </ul>
+    <li>DAY 5</li>
+    <ul>
+        <li>Basic data Structure and algorithm</li>
+        <li>Performin all oop's concept</li>
+        <li>performin Stack and queue</li>
+    </ul>
 </ol>
 
 
