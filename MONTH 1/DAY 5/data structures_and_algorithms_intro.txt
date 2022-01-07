@@ -6,6 +6,15 @@
     Data structures make it easy for users to access and
     work with the data they need in appropriate ways.
 
+    1)linear data structure
+      ->array
+      ->link list
+      ->stack
+      ->queue
+   2)NON linear data structure
+      ->Tree
+      ->graph
+
 2) what is algorithm?
  -->An algorithm is a set of instructions for solving a
     problem or accomplishing a task. One common example of
@@ -43,3 +52,25 @@
       -->run time and compile time polymorphism
       -->interface
       -->incapstulation
+   
+   access modifier
+   ---------------
+   1)public --> access outside the class and package
+   2)private --> access inside the class
+   3)protected --> access inside the package
+   4)defualt
+
+   stack and queue
+   ---------------
+   1)stack
+   -------
+   -->first in last our(FILO)
+   -->use simple array
+   2)queue
+   -->FIRST IN FIRST OUR(FIFO)
+   -->simple array and also 2 stack
+   -->type of queue
+      1)simple queue
+      2)circular queue
+      3)priority queue
+      4)double ended queue
