@@ -27,6 +27,12 @@
         <li>Performin all oop's concept</li>
         <li>performin Stack and queue</li>
     </ul>
+    <li>DAY 6</li>
+    <ul>
+        <li>Basic about BIG O notation</li>
+        <li>Recursion</li>
+        <li>Link List</li>
+    </ul>
 </ol>
 
 
