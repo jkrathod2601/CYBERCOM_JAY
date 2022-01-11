@@ -1,3 +1,4 @@
+
 def part(array, left, right):
   pivot = array[right]
   i = left - 1
@@ -19,3 +20,4 @@ for i in range(0,n):
     data.append(int(input()))
 quick(data, 0, len(data) - 1)
 print(data)
+
