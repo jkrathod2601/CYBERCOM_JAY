@@ -33,6 +33,12 @@
         <li>Recursion</li>
         <li>Link List</li>
     </ul>
+    <li>DAY 7</li>
+    <ul>
+        <li>BinarySearch</li>
+        <li>Binary_tree</li>
+        <li>Quicksort</li>
+    </ul>
 </ol>
 
 
