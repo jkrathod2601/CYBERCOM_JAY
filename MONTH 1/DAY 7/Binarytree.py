@@ -23,6 +23,7 @@ class Node:
         print(self.data)
         if self.right:
             self.right.printtree()
+
 root=Node(10)
 root.insert(5)
 root.insert(15)
