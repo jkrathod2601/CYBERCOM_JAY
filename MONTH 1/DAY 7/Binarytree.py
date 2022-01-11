@@ -23,13 +23,13 @@ class Node:
         print(self.data)
         if self.right:
             self.right.printtree()
-root=Node(10)
-root.insert(5)
-root.insert(15)
-root.insert(4)
-root.insert(13)
-root.insert(51)
-root.insert(2)
+root=Node(1)
+root.insert(0)
+root.insert(1)
+root.insert(0)
+root.insert(1)
+root.insert(0)
+root.insert(1)
 root.printtree()
 
     
