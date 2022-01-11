@@ -7,10 +7,13 @@ for i in data:
         x[i['entity_id']]=[i['parent_id']]
     else:
         x[i['entity_id']].append(i['parent_id'])
+
 def findpath(v1):
     if v1=="1":
         return "1"
-    return v1+"/"+findpath(x[v1][0])
+    if v1=="0":
+        return "YOU ARE DONE"
+    return findpath(x[v1][0])+"/"+v1
 print(findpath(str(input())))
 
 
