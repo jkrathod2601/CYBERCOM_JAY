@@ -1,10 +1,23 @@
 class tree:
-    s=""
-    x=[]
+    sumis=0
     def __init__(self, data):
         self.data = data
         self.left= None
         self.right= None
+    def findvalue(self,node,x):
+        if node==None:
+            return
+        x.append(node.data)
+        if node.left==None and node.right==None:
+            s=""
+            for i in x:
+                s=s+str(i)
+#             print(s)
+#             print(binaryToDecimal(int(s)))
+            self.sumis=self.sumis+binaryToDecimal(int(s))
+        self.findvalue(node.left,x)
+        self.findvalue(node.right,x)
+        x.pop()
 def binaryToDecimal(binary):
     binary1 = binary
     decimal, i, n = 0, 0, 0
@@ -13,21 +26,8 @@ def binaryToDecimal(binary):
         decimal = decimal + dec * pow(2, i)
         binary = binary//10
         i += 1
-    return decimal  
-sum=0
-def findvalue(node,x):
-    if node==None:
-        return
-    x.append(node.data)
-    if node.left==None and node.right==None:
-        s=""
-        for i in x:
-            s=s+str(i)
-        print(s)
-        print(binaryToDecimal(int(s)))
-    findvalue(node.left,x)
-    findvalue(node.right,x)
-    x.pop()
+    return decimal
+    
 root=tree(1)
 root.left=tree(0)
 root.left.left=tree(0)
@@ -35,4 +35,6 @@ root.left.right=tree(1)
 root.right=tree(1)
 root.right.left=tree(0)
 root.right.right=tree(1)
-findvalue(root,[])
+sumis=0
+root.findvalue(root,[])
+print(root.sumis)
