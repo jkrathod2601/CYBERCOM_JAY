@@ -5,18 +5,22 @@ public class stack {
     public static int top=0;
     public static int x;
     public static void push(int n){
+        if(top==5) {
+            System.out.println("stack is full");
+            return;
+        }
         a[top]=n;
         top++;
     }
     public static int pop(){
-        x=a[top];
         top--;
+        x=a[top];
         return x;
     }
 
     public static void main(String[] args) {
         Scanner in=new Scanner(System.in);
-        a=new int[20];
+        a=new int[5];
         int n,n1;
         while(true){
             System.out.println("1 for push::2 for pop:3 for print");

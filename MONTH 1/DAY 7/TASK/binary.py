@@ -21,11 +21,11 @@ def binary(arr,low,top,key,x):
         else:
             return x[2:len(x)]
 
-a=[8,8,8,8,8,8]
+a=[1,8,8,8]
+# a=[5,7,7,8,8,10]
 k=8
 x=[-1,-1]
 y1=binary(a,0,len(a)-1,k,x)
 y1.sort()
-x1=[y1[0],y1[len(y1)-1]]
-print(x1)
+print(y1)
 
