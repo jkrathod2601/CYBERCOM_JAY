@@ -1,9 +1,11 @@
 class tree:
     sumis=0
+    # define  a node
     def __init__(self, data):
         self.data = data
         self.left= None
         self.right= None
+    # make a pair of root to leaf
     def findvalue(self,node,x):
         if node==None:
             return
@@ -12,8 +14,8 @@ class tree:
             s=""
             for i in x:
                 s=s+str(i)
-#             print(s)
-#             print(binaryToDecimal(int(s)))
+            # print(s)
+            # print(binaryToDecimal(int(s)))
             self.sumis=self.sumis+binaryToDecimal(int(s))
         self.findvalue(node.left,x)
         self.findvalue(node.right,x)

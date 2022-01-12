@@ -11,7 +11,6 @@ public class HelloWorld {
          n3.next=n4;
           n4.next=n5;
       System.out.print(n5.count);
-       
     }
 }
 
