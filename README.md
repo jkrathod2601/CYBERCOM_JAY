@@ -39,6 +39,12 @@
         <li>Binary_tree</li>
         <li>Quicksort</li>
     </ul>
+    <li>DAY 8</li>
+    <ul>
+        <li>Stack</li>
+        <li>Queue</li>
+        <li>Hash-Table</li>
+    </ul>
 </ol>
 
 
