@@ -1,0 +1,14 @@
+stack and queue
+   ---------------
+   1)stack
+   -------
+   -->first in last our(FILO)
+   -->use simple array
+   2)queue
+   -->FIRST IN FIRST OUR(FIFO)
+   -->simple array and also 2 stack
+   -->type of queue
+      1)simple queue
+      2)circular queue
+      3)priority queue
+      4)double ended queue
