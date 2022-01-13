@@ -1,0 +1,43 @@
+CONSTRAINTS
+-----------
+1) primary key
+==>What's primary key in database?
+---->A primary key is the column or columns that contain values that uniquely identify each row in a table. A database table 
+---->must have a primary key for Optim to 
+---->insert, update, restore, or delete data from a database table. Optim uses primary keys that are defined to the database.
+
+2)froeign key
+==>parent table(refrenced table) ==> primary key
+                     ||
+                     --
+                     foreign key (child table )(refrencing table)
+==>name of the key are different but the data of the key are same and same data type
+==>ON DELETE CASCADE is delete the data in parent also child table delete this rows data
+==>for data reduction no developer use on delete CASCADE in database
+==>we also add foreign key after create a table
+
+ex.
+    ALTER TABLE sales 
+    ADD foreign key(col1) refrences parent_table_name(col1) on delete CASCADE;
+
+3) unique key
+==> all value of colums it been unique (ex. email address)
+==> ex. alter table table_name add unique key (col_name);
+
+4)indexes
+==> for retriving data more easily
+==> use unique key more preferebale for creating an index 
+
+5) default
+==> defualt value for every column
+==>
+ex. alter table table_name
+    change colums number_of_complaint number_of_complaint int defualt 0;
+
+6) not null
+
+DDL (data define language)==> create , drop , alter , rename
+DMl (data manipulation language)==> select , insert, update , delete 
+DCL (data control langage) ==> grant , revoke
+TCL (transition control language) => commit , rollback , savepoint  
+
