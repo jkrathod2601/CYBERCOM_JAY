@@ -1,4 +1,3 @@
-
 def part(array, left, right):
   pivot = array[right]
   i = left - 1

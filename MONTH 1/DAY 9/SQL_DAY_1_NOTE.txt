@@ -1,0 +1,89 @@
+what is SQL?
+-->structure query langage for working with the data base
+
+row ==> Record
+column ==> field
+
+entity ==> the smallest unit that contain meaning-full set of data
+
+1)relational database(table)
+2)non relational database(csv file)
+
+==>both are the part of database designer
+ER DIAGRAM(ENTITY RELATIONSHIP DIAGRAM)
+Relational schema (claassname and rectangular design)
+
+TYPE OF KEY
+-----------
+
+1)Primary Key
+ ==>What's primary key in database?
+---->A primary key is the column or columns that contain values that uniquely identify each row in a table. A database table 
+---->must have a primary key for Optim to 
+---->insert, update, restore, or delete data from a database table. Optim uses primary keys that are defined to the database.
+
+2)Foreign Key
+--->connct one table to onether table it's call foreign key and table have more than one foreign key and null or rep
+--->ating also
+
+3) uniq key
+---->a key that have null value but different value
+---->like a primary key but number of uniqe key is more than one or only one
+---.they have single column or more than combination of one column is called an unique key
+
+child table ==> refrancing table
+parent table ==> refrance table
+
+ON DELETE CASCADE ==> if we remove a row from parents also from the child this same id row will be drop
+
+1)CREATE DATABASE [IF NOT EXISTS] databse_name;(for creating a database)
+2)USE database_name;(for using database)
+
+DATA TYPE
+---------
+1)CHAR ==> size(5 Bytes) ==> Storage fixed ==> maximum size(255 ) ==> 50% faster then varchar
+2)VARCHAR ==> size(5 Bytes) ==> Storage variable ==>maximum size (65535)
+3)ENUM(enumarate) ==> ENUM('M','F') ==> decide which value will be insterted into the database is work with ENUM
+
+NUMERIC DATA TYPE
+-----------------
+1)INTEGER (or) INT (if we want to use unsigned thn we define into the query)
+  (signed and asigned is always a part of this integer ,by default is was signed)
+  (if signed then the maximum index/2 in both plus and minus site)
+  type
+  ----
+  1)TINYINT => 1 byte
+  2)SMALLINT => 2 byte
+  3)MEDIUMINT => 3 byte
+  4)INT       => 4 byte
+  5)BIGINT    => 8 byte
+2)FIXED AND FLOATING
+  EX.
+    10.523 ==> precision (5) ==>scale (3)
+    DECIMAL(5(p),3(s)) ==> FIXED POINT TYPE ==> DECIMAL(p,s) (and) NUMERIC(p,s)
+    FLOAT(p,s)(4 byte)=>round up value will given back is error ==> floating point data type => FLOAT(s,p) and DOUBLE(s,p)(8 byte)
+3)DATETIME(date+time) (and) TIMESTAMP (and) DATE(only date)
+  TIMESTAMP ==> take an exact well define time from 1st jan 1970 ==> give answer in second ==>use for managing the time zone
+
+3.1) BLOB (Binary Large Object)(data file with 1 and 0)(.img and other file)
+
+4)CREATE TABLE 
+  ex>
+	create table Sales(
+	purchase_of_number INT NOT NULL primary key AUTO_INCREMENT,
+	date_of_purchase date NOT null,
+	customer_id int,
+	item_code varchar(10) NOT NULL
+	);
+  ex>
+	create table Sales(
+	purchase_of_number INT NOT NULL AUTO_INCREMENT,
+	date_of_purchase date NOT null,
+	customer_id int,
+	item_code varchar(10) NOT NULL,
+	primary key(purchase_of_number)
+	);
+
+5) select * from sales.Sales;  (direct use the database and then . table name and access the data)
+
+6) DROP TABLE table_name; (for deletinf the all table and also the structure)

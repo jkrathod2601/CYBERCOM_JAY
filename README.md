@@ -45,6 +45,12 @@
         <li>Queue</li>
         <li>Hash-Table</li>
     </ul>
+    <li>DAY 9</li>
+    <ul>
+        <li>Basic concept of the MYSQL</li>
+        <li>creating database and creatring a table</li>
+        <li>understanding about the differnet datatype</li>
+    </ul>
 </ol>
 
 
