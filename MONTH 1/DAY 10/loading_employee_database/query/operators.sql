@@ -145,3 +145,4 @@ WHERE
     hire_date>"1986-01-01";
 
 -- DISTINCT (not repete the same row of any column we defined)
+select distinct gender from employees;

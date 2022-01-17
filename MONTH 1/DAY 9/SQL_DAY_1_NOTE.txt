@@ -67,6 +67,10 @@ NUMERIC DATA TYPE
 
 3.1) BLOB (Binary Large Object)(data file with 1 and 0)(.img and other file)
 
+>> INT(10) means you probably defined it as INT UNSIGNED . So, you can store numbers from 0 
+up to 4294967295 (note that the maximum value has 10 digits, so MySQL automatically added the (10)
+ in the column definition which (10) is just a format hint and nothing more.
+
 4)CREATE TABLE 
   ex>
 	create table Sales(
