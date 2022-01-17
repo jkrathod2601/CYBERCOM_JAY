@@ -24,7 +24,11 @@ TYPE OF KEY
 
 2)Foreign Key
 --->connct one table to onether table it's call foreign key and table have more than one foreign key and null or rep
+
 ---> ating also
+=======
+--->ating also
+
 
 3) uniq key
 ---->a key that have null value but different value
@@ -70,6 +74,8 @@ NUMERIC DATA TYPE
 >> INT(10) means you probably defined it as INT UNSIGNED . So, you can store numbers from 0 
 up to 4294967295 (note that the maximum value has 10 digits, so MySQL automatically added the (10)
  in the column definition which (10) is just a format hint and nothing more.
+
+=======
 
 4)CREATE TABLE 
   ex>
