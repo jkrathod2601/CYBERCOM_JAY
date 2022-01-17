@@ -86,3 +86,62 @@ where first_name like ('____%');
 -- not like
 select * from employees 
 where first_name like ('Mar%'); 
+
+
+-- WILDCARD CHARACTERS
+/*
+    % _ * 
+*/
+
+-- BETWEEN  and AND
+-- also apply for string and int
+SELECT 
+    *
+FROM
+    employees
+WHERE
+    hire_date BETWEEN '1985-01-01' AND '2001-01-01';
+
+-- not between 
+SELECT 
+    *
+FROM
+    employees
+WHERE
+    hire_date NOT BETWEEN '1985-01-01' AND '2001-01-01';
+
+-- IS NOT NULL and IS NULL
+SELECT 
+    *
+FROM
+    employees
+WHERE
+    first_name IS NOT NULL;
+
+-- 
+SELECT 
+    *
+FROM
+    employees
+WHERE
+    first_name IS NULL;
+
+
+-- compression operator
+--  = >= <= > <  != <>(not equal to)
+SELECT 
+    *
+FROM
+    employees
+WHERE
+    first_name <> "Parto";
+
+-- 
+SELECT 
+    *
+FROM
+    employees
+WHERE
+    hire_date>"1986-01-01";
+
+-- DISTINCT (not repete the same row of any column we defined)
