@@ -51,6 +51,12 @@
         <li>creating database and creatring a table</li>
         <li>understanding about the differnet datatype</li>
     </ul>
+    <li>DAY 10</li>
+    <ul>
+        <li>Basic concept of the keys in MYSQL</li>
+        <li>loading the database in our server</li>
+        <li>operators in MYSQL</li>
+    </ul>
 </ol>
 
 

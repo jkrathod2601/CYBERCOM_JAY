@@ -1,0 +1,2 @@
+>> simple import the file(open sql file in database) into the sql workbench and run the programe and 
+>> SELECT 'CREATING DATABASE STRUCTURE' as 'INFO'; (this is use for log while executing the sql file)

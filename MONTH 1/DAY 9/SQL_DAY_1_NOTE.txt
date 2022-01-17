@@ -24,7 +24,7 @@ TYPE OF KEY
 
 2)Foreign Key
 --->connct one table to onether table it's call foreign key and table have more than one foreign key and null or rep
---->ating also
+---> ating also
 
 3) uniq key
 ---->a key that have null value but different value

@@ -35,9 +35,20 @@ ex. alter table table_name
     change colums number_of_complaint number_of_complaint int defualt 0;
 
 6) not null
+==> for alter table command only null is available infront of not null
+==>change column have not null on alter command
+
 
 DDL (data define language)==> create , drop , alter , rename
 DMl (data manipulation language)==> select , insert, update , delete 
 DCL (data control langage) ==> grant , revoke
 TCL (transition control language) => commit , rollback , savepoint  
+
+Coding Techniques and besr practices
+------------------------------------
+==> always choes meaningfull and short name
+==> pronounceable
+==> capitalized sql keyword
+==> /* ...... */ => for large comment
+==> # and -- for short one line comments
 
