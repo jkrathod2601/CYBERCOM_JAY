@@ -52,3 +52,9 @@ Coding Techniques and besr practices
 ==> /* ...... */ => for large comment
 ==> # and -- for short one line comments
 
+
+WHERE vs HAVING
+
+>> where use for row
+>> having use for group of row
+
