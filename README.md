@@ -57,6 +57,7 @@
         <li>loading the database in our server</li>
         <li>operators in MYSQL</li>
     </ul>
+
     <li>DAY 11</li>
     <ul>
         <li>Insert query // update query // delete query</li>
