@@ -1,0 +1,9 @@
+>> COPY THE OTHER TABLE DATA INTO THIS TABLE
+
+INSERT INTO table_new (c_1,c_2,c_3)
+select c_1,c_2,c_3 
+from table_old
+where condition
+
+
+>> aggregete function ignore the null value
