@@ -1,5 +1,5 @@
 create database if not exists esite;
-use esite; 
+use esite;
 
 CREATE TABLE IF NOT EXISTS user (
     id BIGINT NOT NULL AUTO_INCREMENT,
@@ -9,8 +9,8 @@ CREATE TABLE IF NOT EXISTS user (
     mobile VARCHAR(15) NOT NULL,
     email VARCHAR(50) NOT NULL,
     passwordHash VARCHAR(32) NOT NULL,
-    admin TINYINT NOT NULL default 0,
-    vendor TINYINT NOT NULL default 1,
+    admin TINYINT NOT NULL DEFAULT 0,
+    vendor TINYINT NOT NULL DEFAULT 1,
     registeredAt DATETIME NOT NULL,
     lastlogin DATETIME DEFAULT NULL,
     intro TINYTEXT DEFAULT NULL,
@@ -18,6 +18,8 @@ CREATE TABLE IF NOT EXISTS user (
     PRIMARY KEY (id),
     UNIQUE KEY (mobile , email)
 );
+
+select * from user;
 
 CREATE TABLE IF NOT EXISTS tag (
     id BIGINT NOT NULL AUTO_INCREMENT,
@@ -35,7 +37,9 @@ CREATE TABLE IF NOT EXISTS product_tag (
     tagId BIGINT NOT NULL,
     PRIMARY KEY (productId),
     FOREIGN KEY (tagId)
-        REFERENCES tag (id)
+        REFERENCES tag (id),
+    FOREIGN KEY (productId)
+        REFERENCES product (id)
 );
 
 CREATE TABLE IF NOT EXISTS category (
@@ -49,14 +53,22 @@ CREATE TABLE IF NOT EXISTS category (
     FOREIGN KEY (parentId)
         REFERENCES category (id)
 );
+
+select * from category;
+select title from category
+where id in (select parentId from category);
   
-  CREATE TABLE IF NOT EXISTS product_category (
+CREATE TABLE IF NOT EXISTS product_category (
     productId BIGINT NOT NULL AUTO_INCREMENT,
     categoryId BIGINT NOT NULL,
     PRIMARY KEY (productId),
     FOREIGN KEY (categoryId)
-        REFERENCES category (id)
+        REFERENCES category (id),
+    FOREIGN KEY (productid)
+        REFERENCES product (id)
 );
+
+select * from product_category;
 
 CREATE TABLE IF NOT EXISTS product (
     id BIGINT NOT NULL AUTO_INCREMENT,
@@ -71,21 +83,33 @@ CREATE TABLE IF NOT EXISTS product (
     quantity SMALLINT NOT NULL DEFAULT 0,
     shop TINYINT NOT NULL DEFAULT 0,
     createdAt DATETIME NOT NULL,
-    updatedAt DATETIME  DEFAULT NULL,
-    publishedAt DATETIME  DEFAULT NULL,
-    startsAt DATETIME  DEFAULT NULL,
-    endsAt DATETIME  DEFAULT NULL,
-    content TEXT  DEFAULT NULL,
+    updatedAt DATETIME DEFAULT NULL,
+    publishedAt DATETIME DEFAULT NULL,
+    startsAt DATETIME DEFAULT NULL,
+    endsAt DATETIME DEFAULT NULL,
+    content TEXT DEFAULT NULL,
     PRIMARY KEY (`id`)
 );
+select * from product;
+select * from product
+order by createdAt;
 
-create table if not exists product_meta(
-	id BIGINT NOT NULL AUTO_INCREMENT,
-	productId BIGINT NOT NULL,
-	key_is VARCHAR(50) NOT NULL,
-	content TEXT  DEFAULT NULL,
-	PRIMARY KEY (`id`),
-    foreign key(productId) references product(id)
+select title from product where timediff(updatedAt,"2022-01-19 13:00:00")<'0:02:00';
+
+select title from product
+where quantity between 5 and 30;
+
+select * from product 
+where price between 50 and 101;
+
+CREATE TABLE IF NOT EXISTS product_meta (
+    id BIGINT NOT NULL AUTO_INCREMENT,
+    productId BIGINT NOT NULL,
+    key_is VARCHAR(50) NOT NULL,
+    content TEXT DEFAULT NULL,
+    PRIMARY KEY (`id`),
+    FOREIGN KEY (productId)
+        REFERENCES product (id)
 );
 
 CREATE TABLE IF NOT EXISTS product_review (
@@ -100,8 +124,19 @@ CREATE TABLE IF NOT EXISTS product_review (
     content TEXT NULL DEFAULT NULL,
     PRIMARY KEY (`id`),
     FOREIGN KEY (productId)
-        REFERENCES product (id)
+        REFERENCES product (id),
+    FOREIGN KEY (parentId)
+        REFERENCES product_review (id)
 );
+
+select * from product_review;
+
+select t2.title,t1.productid,count(t1.productid)
+from product_review t1
+join product t2
+on t1.productId=t2.id
+group by(t1.productId)
+having count(t1.productId)>2;
 
 CREATE TABLE IF NOT EXISTS order_item (
     id BIGINT NOT NULL AUTO_INCREMENT,
@@ -116,8 +151,12 @@ CREATE TABLE IF NOT EXISTS order_item (
     content TEXT NULL DEFAULT NULL,
     PRIMARY KEY (`id`),
     FOREIGN KEY (productId)
-        REFERENCES product (id)
+        REFERENCES product (id),
+    FOREIGN KEY (orderId)
+        REFERENCES order_final (id)
 );
+
+select * from order_item;
 
 CREATE TABLE IF NOT EXISTS order_final (
     id BIGINT NOT NULL AUTO_INCREMENT,
@@ -151,44 +190,65 @@ CREATE TABLE IF NOT EXISTS order_final (
         REFERENCES user (id)
 );
 
-create table if not exists cart(
-	id BIGINT NOT NULL AUTO_INCREMENT,
-	userId BIGINT NULL DEFAULT NULL,
-	sessionId VARCHAR(100) NOT NULL,
-	token VARCHAR(100) NOT NULL,
-	status SMALLINT NOT NULL DEFAULT 0,
-	firstName VARCHAR(50) NULL DEFAULT NULL,
-	middleName VARCHAR(50) NULL DEFAULT NULL,
-	lastName VARCHAR(50) NULL DEFAULT NULL,
-	mobile VARCHAR(15) DEFAULT NULL,
-	email VARCHAR(50) DEFAULT NULL,
-	line1 VARCHAR(50)  DEFAULT NULL,
-	line2 VARCHAR(50)  DEFAULT NULL,
-	city VARCHAR(50)  DEFAULT NULL,
-	province VARCHAR(50)  DEFAULT NULL,
-	country VARCHAR(50)  DEFAULT NULL,
-	createdAt DATETIME NOT NULL,
-  updatedAt DATETIME  DEFAULT NULL,
-  content TEXT NULL DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  foreign key(userId) references user(id)
+select id from order_final where promo is not null;
+
+select * from order_final;
+
+select sum(subTotal) from order_final;
+
+select sum(itemDiscount) as a1 from order_final;
+
+select t1.firstname,count(t2.id)
+from user t1
+inner join order_final t2 on t1.id=t2.userId
+group by(t1.firstname); 
+
+CREATE TABLE IF NOT EXISTS cart (
+    id BIGINT NOT NULL AUTO_INCREMENT,
+    userId BIGINT NULL DEFAULT NULL,
+    sessionId VARCHAR(100) NOT NULL,
+    token VARCHAR(100) NOT NULL,
+    status SMALLINT NOT NULL DEFAULT 0,
+    firstName VARCHAR(50) NULL DEFAULT NULL,
+    middleName VARCHAR(50) NULL DEFAULT NULL,
+    lastName VARCHAR(50) NULL DEFAULT NULL,
+    mobile VARCHAR(15) DEFAULT NULL,
+    email VARCHAR(50) DEFAULT NULL,
+    line1 VARCHAR(50) DEFAULT NULL,
+    line2 VARCHAR(50) DEFAULT NULL,
+    city VARCHAR(50) DEFAULT NULL,
+    province VARCHAR(50) DEFAULT NULL,
+    country VARCHAR(50) DEFAULT NULL,
+    createdAt DATETIME NOT NULL,
+    updatedAt DATETIME DEFAULT NULL,
+    content TEXT NULL DEFAULT NULL,
+    PRIMARY KEY (`id`),
+    FOREIGN KEY (userId)
+        REFERENCES user (id)
 );
 
-create table if not exists cart_item(
-id BIGINT NOT NULL AUTO_INCREMENT,
-  productId BIGINT NOT NULL,
-  cartId BIGINT NOT NULL,
-  sku VARCHAR(100) NOT NULL,
-  price FLOAT NOT NULL DEFAULT 0,
-  discount FLOAT NOT NULL DEFAULT 0,
-  quantity SMALLINT NOT NULL DEFAULT 0,
-  active TINYINT NOT NULL DEFAULT 0,
-  createdAt DATETIME NOT NULL,
-  updatedAt DATETIME DEFAULT NULL,
-  content TEXT NULL DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  foreign key(productId) references product(id)
+select * from cart;
+
+CREATE TABLE IF NOT EXISTS cart_item (
+    id BIGINT NOT NULL AUTO_INCREMENT,
+    productId BIGINT NOT NULL,
+    cartId BIGINT NOT NULL,
+    sku VARCHAR(100) NOT NULL,
+    price FLOAT NOT NULL DEFAULT 0,
+    discount FLOAT NOT NULL DEFAULT 0,
+    quantity SMALLINT NOT NULL DEFAULT 0,
+    active TINYINT NOT NULL DEFAULT 0,
+    createdAt DATETIME NOT NULL,
+    updatedAt DATETIME DEFAULT NULL,
+    content TEXT NULL DEFAULT NULL,
+    PRIMARY KEY (`id`),
+    FOREIGN KEY (productId)
+        REFERENCES product (id),
+    FOREIGN KEY (cartId)
+        REFERENCES cart (id)
 );
+
+select * from cart_item;
 
 CREATE TABLE IF NOT EXISTS transaction (
     id BIGINT NOT NULL AUTO_INCREMENT,
