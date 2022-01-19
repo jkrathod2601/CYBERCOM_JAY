@@ -59,14 +59,23 @@ select title from category
 where id in (select parentId from category);
   
 CREATE TABLE IF NOT EXISTS product_category (
-    productId BIGINT NOT NULL AUTO_INCREMENT,
+    productId BIGINT NOT NULL,
     categoryId BIGINT NOT NULL,
-    PRIMARY KEY (productId),
     FOREIGN KEY (categoryId)
         REFERENCES category (id),
     FOREIGN KEY (productid)
         REFERENCES product (id)
 );
+drop table product_category;
+select * from product_category;
+insert into product_category(productid,categoryid)
+values (1,1),(1,2),(1,3),(2,1),(3,1),(3,2);
+
+select productId,count(categoryId)
+from product_category
+group by productId
+having count(categoryId)>1; 
+
 
 select * from product_category;
 
@@ -95,6 +104,7 @@ select * from product
 order by createdAt;
 
 select title from product where timediff(updatedAt,"2022-01-19 13:00:00")<'0:02:00';
+
 
 select title from product
 where quantity between 5 and 30;
@@ -249,6 +259,15 @@ CREATE TABLE IF NOT EXISTS cart_item (
 );
 
 select * from cart_item;
+select count(cartId) from cart_item where active=1; 
+
+select cart_item.id,cart.userId,cart_item.productId,user.firstname
+from cart_item
+inner join cart
+on cart_item.cartId=cart.id
+inner join user
+on cart.userid=user.id
+where cart_item.active=1;
 
 CREATE TABLE IF NOT EXISTS transaction (
     id BIGINT NOT NULL AUTO_INCREMENT,
@@ -266,11 +285,4 @@ CREATE TABLE IF NOT EXISTS transaction (
         REFERENCES user (id),
     FOREIGN KEY (orderId)
         REFERENCES order_final (id)
-);
-    id BIGINT NOT NULL auto_increment,
-    title varchar(75) not null default "N/A",
-    metaTitle varchar(100) default null,
-    slug varchar(100) not null default "N/A",
-    content text default null,
-    primary key (id)
 );
