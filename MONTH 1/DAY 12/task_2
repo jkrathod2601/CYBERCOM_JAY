@@ -72,6 +72,9 @@ where UserId=1;
 10)Show all the orders which are created on 19th Jan.
 
 
+select * from order_final
+where createdAt="2022-01-19";
+
 
 11)Show product names and their product ids which are placed in order id 1
 
