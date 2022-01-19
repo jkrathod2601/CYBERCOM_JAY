@@ -1,0 +1,90 @@
+
+1)List all the product names which are assigned to category ID 1.
+
+select t1.title 
+from product t1
+inner join product_category t2
+on t1.id=t2.productId
+where t2.categoryId=1;
+
+2)Get the active product count which is assigned to category ID 2.
+
+select product.title,count(cart_item.quantity)
+from product 
+inner join cart_item on product.id=cart_item.productId
+inner join product_category on product.id=product_category.productId
+where product_category.categoryId=2
+group by product.title;
+
+
+3)Show all category names which are assigned to Product ID 1.
+
+select category.title
+from category
+inner join product_category on product_category.categoryId=category.id
+where product_category.productId=1;
+
+4)List out all the tag names which are assigned to Product ID 1.
+select tag.title
+from tag
+inner join product_tag
+on tag.id=product_tag.tagId
+inner join product
+on product_tag.productId=product.id
+where product.id=1; 
+
+
+5)Show product reviews with product name if product is active.
+
+select product.title,product_review.title
+from product 
+inner join product_review on product.id=product_review.productId
+inner join cart_item on cart_item.productid=product.id
+where cart_item.active=1;
+
+6)List out product names and product ids which have at least one order available.
+
+select t1.id,t1.title
+from product t1
+inner join order_item t2
+on t1.id=t2.productId
+group by t1.title;
+
+7)Show the product names, ids and total qty purchased so far for each product.
+
+select t1.id,t1.title,count(t1.quantity) as total_sell
+from product t1
+inner join order_item t2
+on t1.id=t2.productId
+group by t1.title;
+
+8)Show User ID and Order ID associated with that User.
+select t1.id as order_id,t2.id as user_id,t2.firstName
+from order_final t1
+inner join user t2
+on t1.userId=t2.id;
+
+9)Show total subtotal of all the orders for user id 1.
+
+select sum(subTotal) from order_final 
+where UserId=1;
+
+10)Show all the orders which are created on 19th Jan.
+
+
+
+11)Show product names and their product ids which are placed in order id 1
+
+select t1.id,t1.title
+from product t1
+inner join order_item t2
+on t1.id=t2.productId
+where t2.orderId=1;
+
+12)List out the order of user ID 1 which has a discount greater than 100.
+
+select t1.userId,t2.firstname
+from order_final t1
+inner join user t2
+on t1.userId=t2.id
+where t1.userId=1 and t1.discount>100;

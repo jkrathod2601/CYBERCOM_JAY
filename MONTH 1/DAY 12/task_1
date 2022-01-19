@@ -1,37 +1,31 @@
->> JOIN <<
-
->> join is an sql tool that allow us to construct a RELATIONSHIP between objects
->> use for linking the table
-
-
-Get all the categories which are having at least one sub category
+1)Get all the categories which are having at least one sub category
  >> 
         select * from category
         where id in (select parentId from category);
 
-Get all the products which are having price between 50 to 100
+2)Get all the products which are having price between 50 to 100
 >>      
         select * from product 
         where price between 50 and 101;
-Get all the products sorted based on created date
+3)Get all the products sorted based on created date
 >> 
         select * from product
         order by createdAt;
-Get total sub total of all the orders
+4)Get total sub total of all the orders
 >>      select sum(subTotal) from order_final;
 
-Get total discount applied in all the orders
+5)Get total discount applied in all the orders
 >>
             select sum(itemDiscount) as a1 
             from order_final;
 
-Get data of particular user that how many orders they are having 
+6)Get data of particular user that how many orders they are having 
 >>          
             select t1.firstname,count(t2.id)
             from user t1
             inner join order_final t2 on t1.id=t2.userId
             group by(t1.firstname); 
-get the list of product ids which are having multiple categories.
+7)get the list of product ids which are having multiple categories.
 
 >>
         select productId,count(categoryId)
@@ -40,7 +34,7 @@ get the list of product ids which are having multiple categories.
         having count(categoryId)>1; 
 
 
-Get all the product ids which is having more than 2 reviews
+8)Get all the product ids which is having more than 2 reviews
     >> 
         select t2.title,t1.productid,count(t1.productid)
         from product_review t1
@@ -49,21 +43,21 @@ Get all the product ids which is having more than 2 reviews
         group by(t1.productId)
         having count(t1.productId)>2;
 
-Get all the products which are updated in last 2 hours
+9)Get all the products which are updated in last 2 hours
     >>
         select title from product 
         where timediff(updatedAt,"2022-01-19 13:00:00")<'0:02:00';
 
-Get products which is having qty between 20 to 30
+10)Get products which is having qty between 20 to 30
     >>
             select title from product
             where quantity between 5 and 30;
 
-get order list which having promocode applies on order
+11)get order list which having promocode applies on order
 >>
         select id from order_final where promo is not null;
 
-get the current active cart detail
+12)get the current active cart detail
 >>
         select cart_item.id,cart.userId,cart_item.productId,user.firstname
         from cart_item
