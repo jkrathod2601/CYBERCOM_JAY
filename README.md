@@ -63,6 +63,10 @@
         <li>aggregation function</li>
         <li>commit // rollback</li>
     </ul>
+    <li>DAY 12</li>
+    <ul>
+        <li>SQL joins</li>
+    </ul>
 </ol>
 
 
