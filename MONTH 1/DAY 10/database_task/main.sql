@@ -10,12 +10,12 @@ create table if not exists Customer(
  user_last_name varchar(20) not null
 );
 
-create table category(
+create table if not exists category(
 category_id int not null auto_increment primary key,
 category_name varchar(20) not null
 );
 
-CREATE TABLE product (
+CREATE TABLE if not exists product (
     product_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     product_name VARCHAR(100) NOT NULL,
     product_about VARCHAR(200) NOT NULL,
@@ -25,7 +25,7 @@ CREATE TABLE product (
         REFERENCES category (category_id)
 );
 
-create table address (
+create table if not exists address (
  address_id int not null auto_increment,
  customer_id int not null,
  address_1 varchar(100) default null,
@@ -37,7 +37,7 @@ create table address (
 );
 
 
-create table user_order(
+create table if not exists user_order(
 order_id int not null primary key auto_increment,
 customer_id int not null,
 product_id int not null,
