@@ -67,6 +67,11 @@
     <ul>
         <li>SQL joins</li>
     </ul>
+    <li>DAY 13</li>
+    <ul>
+        <li>sub query</li>
+        <li>self join</li>
+    </ul>
 </ol>
 
 
