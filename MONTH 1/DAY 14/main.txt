@@ -1,0 +1,71 @@
+types of mysql variable
+========================
+
+1) local => a variable that is visible only in th begin - end block in whhich it was created
+         => DECLARE v_variablename DECIMAL(10,2)
+2) session => a series of information exchange interaction , or dialogue betwwen a computer and a user
+        ==> when session is started
+        ==> SET @v_variable_name =3 
+        ==>we can access this variable from anywhere during the active session and only in the
+            session were it created
+3) global (system variable)=> global applyb to all connection
+            ==> .max_connections() => in server how maximum number of client can connect to the server
+            ==> .max_join-size => set the maximum memory space allocated for the joins
+                created by a certain connection
+            ==> SET global max_connections=100;
+                SET @@global.max_connections=1;
+
+USER DEFINE vs SYSTEM VARIABLE
+===============================
+
+user_define ==> variable that can be set by the user mannualy
+
+system ==> variables that are pre-defined on our system the MYSQL server
+
+=>user define only local variable
+=> system variable is an global variable
+=>> session variabale can be user define and also system variable
+
+MYSQL indexes
+===============
+
+1) clusterd index
+2) non clusterd index
+
+syntax:::  create index index_name
+            on table_1 (c_1,c_2);
+composite indexes ==> crate multiple indexing
+
+==> primary key and uniqe key are mysql index
+ for getting indexing information
+==> show index from table_1;
+
+CASE statement
+==============
+
+syntax::
+
+select 
+        column_name 
+        CASE condition_field
+            when condition_field_1 then result_1
+            when condition_field_2 then result_2
+            when condition_field_3 then result_3
+
+            ELSE result_else
+        END AS
+from 
+ table_name;
+
+
+==>
+
+    select 
+        c_1,
+        c_2,
+        if(c_3="M","MALE","FEMALE") as c_3
+    from 
+        table_name;
+
+if ==> only one condition
+case ==> multiple condition

@@ -72,6 +72,12 @@
         <li>sub query</li>
         <li>self join</li>
     </ul>
+    <li>DAY 14</li>
+    <ul>
+        <li>Type of sql variable</li>
+        <li>indexing</li>
+        <li>Case statment</li>
+    </ul>
 </ol>
 
 
