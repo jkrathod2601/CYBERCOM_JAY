@@ -32,3 +32,8 @@ SET global max_connections=100;
 
 -- for update the global variable
 SET @@global.max_connections=1;
+
+
+-- how to create index
+create index index_name
+on table_1 (c_1,c_2);

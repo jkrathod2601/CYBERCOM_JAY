@@ -25,3 +25,47 @@ system ==> variables that are pre-defined on our system the MYSQL server
 =>user define only local variable
 => system variable is an global variable
 =>> session variabale can be user define and also system variable
+
+MYSQL indexes
+===============
+
+1) clusterd index
+2) non clusterd index
+
+syntax:::  create index index_name
+            on table_1 (c_1,c_2);
+composite indexes ==> crate multiple indexing
+
+==> primary key and uniqe key are mysql index
+ for getting indexing information
+==> show index from table_1;
+
+CASE statement
+==============
+
+syntax::
+
+select 
+        column_name 
+        CASE condition_field
+            when condition_field_1 then result_1
+            when condition_field_2 then result_2
+            when condition_field_3 then result_3
+
+            ELSE result_else
+        END AS
+from 
+ table_name;
+
+
+==>
+
+    select 
+        c_1,
+        c_2,
+        if(c_3="M","MALE","FEMALE") as c_3
+    from 
+        table_name;
+
+if ==> only one condition
+case ==> multiple condition
