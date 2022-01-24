@@ -158,3 +158,23 @@ select getmaximumsalary(11356);
 -- that retrieve either the lowest or the highest salary, respectively (using the same logic and code structure 
 -- from Exercise 9). If the inserted value is any string value different from ‘min’ or ‘max’, let the function 
 -- return the difference between the highest and the lowest salary of that employee.
+
+DELIMITER $$
+ create function getsalary(emp_no_is int(10),type_of varchar(5))
+ returns int(10) DETERMINISTIC
+ 
+ begin 
+ declare _salary int(10);
+ 
+ select 
+	case when type_of like "max" then max(salary)  else min(salary) end
+    into _salary
+ from salaries 
+ where emp_no=emp_no_is;
+ 
+ return _salary;
+ end$$
+ 
+ DELIMITER ;
+
+select getsalary(11356,"max");
