@@ -149,6 +149,9 @@ DELIMITER $$
  
  DELIMITER ;
 
+select getminmumsalary(11356);
+select getmaximumsalary(11356);
+
 
 -- 10)Based on the previous exercise, you can now try to create a third function that also accepts a second
 -- parameter. Let this parameter be a character sequence. Evaluate if its value is 'min' or 'max' and based on 
