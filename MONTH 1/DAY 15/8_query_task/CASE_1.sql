@@ -1,3 +1,4 @@
+-- Create a database structure for employee leave application. It should include all the employee's information as well as their leave information
 create database if not exists leavemanagment;
 use leavemanagment;
 

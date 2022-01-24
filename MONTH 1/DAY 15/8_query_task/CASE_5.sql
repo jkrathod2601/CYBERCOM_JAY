@@ -1,3 +1,7 @@
+-- Write an SQL query to report all customers who never order 
+-- anything. Return the result table in any order.
+
+
 CREATE TABLE IF NOT EXISTS Customers (
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(64) NOT NULL
