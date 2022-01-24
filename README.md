@@ -78,6 +78,10 @@
         <li>indexing</li>
         <li>Case statment</li>
     </ul>
+    <li>DAY 15</li>
+    <ul>
+        <li>10 SQL query</li>
+    </ul>
 </ol>
 
 
