@@ -82,6 +82,10 @@
     <ul>
         <li>10 SQL query</li>
     </ul>
+    <li>DAY 16</li>
+    <ul>
+        <li>SQL query practice</li>
+    </ul>
 </ol>
 
 
