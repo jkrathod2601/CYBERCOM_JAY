@@ -32,3 +32,6 @@ from user
 inner join address on user.c_city=address.city_id; 
 
 
+-- create table if not exists t1(....) 
+
+

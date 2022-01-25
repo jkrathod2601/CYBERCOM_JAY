@@ -10,7 +10,7 @@ CREATE TABLE IF NOT EXISTS role (
     active TINYINT NOT NULL DEFAULT 0,
     createdAt DATETIME NOT NULL,
     updatedAt DATETIME DEFAULT NULL,
-    content TEXT DEFAULT NULL,
+    content TEXT DEFAULT NULL,s
     PRIMARY KEY (`id`)
 );
 

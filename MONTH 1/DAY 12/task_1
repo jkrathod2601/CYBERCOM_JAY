@@ -38,7 +38,7 @@
     >> 
         select t2.title,t1.productid,count(t1.productid)
         from product_review t1
-        join product t2
+        join product t2 
         on t1.productId=t2.id
         group by(t1.productId)
         having count(t1.productId)>2;
