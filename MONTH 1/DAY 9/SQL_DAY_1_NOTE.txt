@@ -97,3 +97,6 @@ up to 4294967295 (note that the maximum value has 10 digits, so MySQL automatica
 5) select * from sales.Sales;  (direct use the database and then . table name and access the data)
 
 6) DROP TABLE table_name; (for deletinf the all table and also the structure)
+
+
+

@@ -46,7 +46,7 @@ select t1.user_name,t2.subject_name,t1.user_age
 from table_1  t1
 join table_2  t2 on t1.id=t2.match_id;
 
-
+ 
 select t1.user_name,t2.subject_name,t1.user_age
 from table_1  t1
 join table_2  t2 on t1.id=t2.match_id

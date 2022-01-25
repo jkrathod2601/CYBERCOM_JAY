@@ -38,11 +38,11 @@ ex. alter table table_name
 ==> for alter table command only null is available infront of not null
 ==>change column have not null on alter command
 
+
 DDL (data define language)==> create , drop , alter , rename
 DMl (data manipulation language)==> select , insert, update , delete 
 DCL (data control langage) ==> grant , revoke
 TCL (transition control language) => commit , rollback , savepoint  
-
 
 Coding Techniques and besr practices
 ------------------------------------
@@ -57,4 +57,5 @@ WHERE vs HAVING
 
 >> where use for row
 >> having use for group of row
+
 
