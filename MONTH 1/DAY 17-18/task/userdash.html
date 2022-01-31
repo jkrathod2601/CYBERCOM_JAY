@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/dash.css">
+</head>
+<body>
+    <style>
+        p,h1{
+            text-align: center;
+        }
+        h1{
+            color: rebeccapurple;
+        }
+        img{
+            margin-left: 20%;
+        }
+    </style>
+    <div class="topnav">
+        <a class="active" href="userdash.html">dashboard</a>
+        <a><button class="" onclick="logout()">log out</button></a>
+    </div>
+    <h1>WELCOME TO CYBERCOM CREATION</h1>
+    <h2><p id="text"></p></h2>
+    <div id="bw">
+
+    </div>
+    <!-- script -->
+    
+    <script>
+        if(sessionStorage.getItem("activeuser")==null){
+            location.replace("login.html")
+          }
+        function logout(){
+            const date=new Date()
+            let id=parseInt(localStorage.getItem("id"))
+            let data=localStorage.getItem("about")
+            let realdata=JSON.parse(data)
+            console.log(realdata[1])
+            realdata[parseInt(id)].logout_date=date
+            localStorage.setItem("about",JSON.stringify(realdata))
+            localStorage.setItem("id",JSON.stringify(id+1))
+            location.replace("login.html")
+            sessionStorage.setItem("activeuser","")
+        }
+
+        document.getElementById("text").innerText=sessionStorage.getItem("activeuser")
+        let x=localStorage.getItem("user")
+        let y=JSON.parse(x)
+        let year=y[sessionStorage.getItem("activeuser")].birthdate
+        let date=new Date()
+        let month=date.getMonth()+1
+        let day=date.getDay()
+        let monthis=parseInt(year.slice(6,8))
+        let dayis=parseInt(year.slice(9,11))
+        if(month==monthis && dayis==day){
+            document.getElementById("bw").innerHTML=`<img src="https://thumbs.dreamstime.com/b/happy-birthday-cupcake-celebration-message-160558421.jpg" alt="">`
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>localStorage</title>
+</head>
+
+<body>
+    <p>data of localStorage</p>
+    <p>add data to local storage</p>
+    <form action="" onsubmit="add()">
+        <input type="text" placeholder="enter your name" id="name" required>
+        <br><br>
+        <input type="number" name="" id="age" placeholder="enter you age" required>
+        <input type="submit">
+    </form>
+    <br><br>
+    <p>get data from localStorage</p>
+    <form action="" onsubmit="getdata(event)">
+        <input type="text" placeholder="enter your name" id="getname" required>
+        <input type="submit" placeholder="gettata">
+    </form>
+    <p id="showdata">the data is shown here</p>
+    <script>
+        let x=""
+        let y=""
+        let z=""
+        const add=()=>{
+            x=document.getElementById("name").value
+            y=document.getElementById("age").value
+            localStorage.setItem(x,y)
+        }
+
+        const getdata=(event)=>{
+            event.preventDefault()
+            z=document.getElementById("getname").value
+            document.getElementById("showdata").innerText=localStorage.getItem(z)
+        }
+
+        // store a object into the local storage
+        const datais={
+            name:"jay",
+            age:20
+        }
+        // 
+        // localStorage.setItem("userdata",datais)  it store the object Object because localstorage only store string
+        localStorage.setItem("user",JSON.stringify(datais))
+
+        let zz=localStorage.getItem("user")
+        console.log(zz)
+        console.log(JSON.parse(zz))
+
+        // localStorage.removeItem(x)
+        // remove value form the storage
+        // localStorage.clear()
+        // clear everything
+    </script>
+</body>
+</html>
