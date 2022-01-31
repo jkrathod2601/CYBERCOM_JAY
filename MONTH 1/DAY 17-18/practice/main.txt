@@ -1,0 +1,40 @@
+cookies - 4000 bytes of data max
+
+session storage - min 5 mb of data
+
+local storage - capacity depends on the divice wich you are using
+-->depend on if we change that then not get data from local storage 
+1) protocol (http and https)
+2) host (domain name)
+3) port
+
+
+
+library
+-->>less number of rule
+-->lik home
+-->jquery
+framwrok
+--> more number of rule
+-->like school
+-->django
+
+
+data type
+=========
+
+1) primitive data type
+-string
+-number
+-undefine
+-Nan(not a number)
+-Null
+-boolean
+
+
+2) non primitive data type
+-array
+-object
+-function
+-date
+-regex

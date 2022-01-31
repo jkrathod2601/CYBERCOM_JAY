@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DashBoard</title>
+    <link rel="stylesheet" href="./css/dash.css">
+    <link rel="stylesheet" href="./css/dashmain.css">
+</head>
+<body>
+    <div class="topnav">
+        <a class="active" href="dashboard.html">Home</a>
+        <a href="user.html">users</a>
+        <a href="loginsession.html">loginsession</a>
+        <a ><button onclick="logout()">Log out</button></a>
+    </div>
+    <div class="main">
+        <div class="sub">
+            <h2>users < 18 years</h2>
+            <h4 id="one">20</h4>
+        </div>
+        <div class="sub">
+            <h2>users 18-50 years</h2>
+            <h4 id="two">20</h4>
+        </div>
+        <div class="sub">
+            <h2>users >50 years</h2>
+            <h4 id="three">20</h4>
+        </div>
+    </div>
+
+    <!-- scipt -->
+    <script>
+        if(localStorage.getItem("adminactive")==0){
+            location.replace("login.html")
+        }
+        const logout=()=>{
+            localStorage.setItem("adminactive",0)
+            location.replace("login.html")
+        }
+        let c1=0
+        let c2=0
+        let c3=0
+        let date=new Date().getFullYear()
+        let y1=localStorage.getItem("user")
+        let y2=JSON.parse(y1)
+        for (let j in y2){
+            let x=parseInt(y2[j].birthdate.slice(0,5))
+            if(date-x<18){
+                c1=c1+1
+            }
+            if(date-x>18 && date-x<50){
+                c2=c2+1
+            }
+            if(date-x>50){
+                c3=c3+1
+            }
+        }
+        document.getElementById("one").innerText=c1
+        document.getElementById("two").innerText=c2
+        document.getElementById("three").innerText=c3
+    </script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOGIN PAGE</title>
+    <link rel="stylesheet" href="./css/login.css">
+</head>
+<body>
+    <form action="" onsubmit="check(event)">
+        <div class="container">
+          <label for="uname"><b>Username</b></label>
+          <input type="text" placeholder="Enter Username" name="uname" id="name" required>
+      
+          <label for="psw"><b>Password</b></label>
+          <input type="password" placeholder="Enter Password" name="psw" id="password"required>
+              
+          <button type="submit">Login</button>
+          <div id="rege">
+            <!--  -->
+            <br>
+          <center>or</center>
+          <br><a href="register.html">Register</a>
+          </div>
+        </div>
+      </form>
+
+      <!-- script -->
+      <script>
+          let x=localStorage.getItem("adminisadd")
+          console.log(x)
+          if(x=="1"){
+            document.getElementById("rege").innerHTML="";
+          }
+
+          const check=()=>{
+              let b=false
+              event.preventDefault()
+              let x1=localStorage.getItem("admin")
+              let x2=JSON.parse(x1)
+              if (x2==null){
+                alert("add first admin and then admin add user then you login")
+                location.replace("login.html")
+              }
+              let x3=localStorage.getItem("user")
+              let x4=JSON.parse(x3)
+              let name=x2.email
+              let password=x2.password
+              let namex=document.getElementById("name").value
+              let passwordx=document.getElementById("password").value
+              
+              if(name==namex && password==passwordx){
+                location.replace("dashboard.html")
+                localStorage.setItem("adminactive","1")
+              }
+              else{
+                for(let i in x4){
+                    if(x4[i].email==namex && x4[i].password==passwordx){
+                        b=true
+                        sessionStorage.setItem("activeuser",namex)
+                        let ab=localStorage.getItem("about")
+                        let bc=JSON.parse(ab)
+                        console.log(bc)
+                        let date=new Date()
+                        let id=localStorage.getItem("id")
+                        let dateobject={
+                          name:namex,
+                          login_time:date,
+                          logout_date:""
+                        }
+                        bc[id]=dateobject
+                        // console.log(dateobject)
+                        // console.log(bc.push(dateobject))
+                        console.log(bc)
+                        let dc=JSON.stringify(bc)
+                        console.log
+                        localStorage.setItem("about",dc)
+                        location.replace("userdash.html")
+                    }
+                }
+                if(b==false){
+                    alert("check your password")
+                }
+              }
+              
+          }
+      </script>
+</body>
+</html>

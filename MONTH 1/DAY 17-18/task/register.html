@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Page</title>
+    <link rel="stylesheet" href="./css/login.css">
+</head>
+<body>
+    <form action="" onsubmit="check(event)">
+        <div class="container">
+          <label for="uname"><b>User Name</b></label>
+          <input type="text" placeholder="Enter Username" name="uname" id="name" required>
+
+          <label for="email"><b>Email</b></label>
+          <input type="email" placeholder="Enter Username" name="email" id="email" required>
+      
+          <label for="psw"><b>Password</b></label>
+          <input type="password" placeholder="Enter Password" name="password" id="password" required>
+          
+          <label for="cpsw"><b>Confirm Password</b></label>
+          <input type="password" placeholder="Enter Password again" name="cpassword" id="cpassword" required>
+
+          <label for="city"><b>Select City</b></label>
+          <select name="city" id="city" required>
+            <option value="bhavnagar">bhavnagar</option>
+            <option value="vadodara">vadodara</option>
+            <option value="surat">surat</option>
+            <option value="ahemdabad">ahemadabad</option>
+          </select>
+
+          <label for="state"><b>Select State</b></label>
+          <select name="state" id="state" required>
+            <option value="gujarat">gujarat</option>
+            <option value="uttar pradesh">uttar pradesh</option>
+            <option value="maharastra">maharastra</option>
+            <option value="bihar">bihar</option>
+          </select>
+          
+          <button type="submit">Register here</button>
+        </div>
+      </form>
+
+      <!-- script -->
+      <script>
+          if(localStorage.getItem("adminisadd")==1){
+            location.replace("login.html")
+            }
+          const check=()=>{
+            event.preventDefault()
+            let y=document.getElementById("password").value
+            let y1=document.getElementById("cpassword").value
+              if(y1==y){
+                let name=document.getElementById("name").value
+                  let email=document.getElementById("email").value
+                  let state=document.getElementById("state").value
+                  let city=document.getElementById("city").value
+                  console.log(password)
+                  const admindata={
+                      name:name,
+                      email:email,
+                      password:y1,
+                      city:city,
+                      state:state
+                  }
+                  localStorage.setItem("admin",JSON.stringify(admindata))
+                  localStorage.setItem("adminisadd",1)
+                  localStorage.setItem("id",1)
+                  localStorage.setItem("about",JSON.stringify({}))
+                  localStorage.setItem("user",JSON.stringify({}))
+                  sessionStorage.setItem("activeuser","")
+                  location.replace("login.html")
+
+              }else{
+                  alert("enter same password in input")
+              }
+          }
+      </script>
+</body>
+</html>

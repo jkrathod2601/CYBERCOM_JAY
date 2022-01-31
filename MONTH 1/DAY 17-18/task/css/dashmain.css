@@ -1,0 +1,13 @@
+.main{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.sub{
+    width: 100%;
+    border: 2px solid black;
+    margin: 2%;
+    text-align: center;
+}
+
