@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DashBoard</title>
+    <link rel="stylesheet" href="./css/dash.css">
+    <link rel="stylesheet" href="./css/dashmain.css">
+    <script>
+        if(localStorage.getItem("adminactive")==0){
+            location.replace("login.html")
+        }
+    </script>
+</head>
+<body>
+    <div class="topnav">
+        <a class="active" href="dashboard.html">Home</a>
+        <a href="user.html">users</a>
+        <a href="loginsession.html">loginsession</a>
+        <a ><button onclick="logout()">Log out</button></a>
+    </div>
+    <div class="main">
+        <div class="sub">
+            <h2>users < 18 years</h2>
+            <h4 id="one">20</h4>
+        </div>
+        <div class="sub">
+            <h2>users 18-50 years</h2>
+            <h4 id="two">20</h4>
+        </div>
+        <div class="sub">
+            <h2>users >50 years</h2>
+            <h4 id="three">20</h4>
+        </div>
+    </div>
+
+    <!-- scipt -->
+    <script src="./js/dashboard.js"></script>
+</body>
+</html>

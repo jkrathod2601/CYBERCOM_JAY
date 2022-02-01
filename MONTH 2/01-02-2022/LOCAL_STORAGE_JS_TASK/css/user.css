@@ -1,0 +1,22 @@
+table{
+    text-align: center;
+    border: 2px;
+    width: 80%;
+    margin-left: 10%;
+    border-spacing: 0;
+}
+
+th,tr,td{
+    border: 1px solid black;
+    /* padding: 1%; */
+}
+
+.btn{
+    background-color: black;
+    width: 25%;
+}
+
+.btn:hover{
+    background-color: white;
+    color: black;
+}

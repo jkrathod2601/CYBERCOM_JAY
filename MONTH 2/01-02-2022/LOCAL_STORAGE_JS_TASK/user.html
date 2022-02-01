@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DashBoard</title>
+    <link rel="stylesheet" href="./css/dash.css">
+    <link rel="stylesheet" href="./css/login.css">
+    <link rel="stylesheet" href="./css/user.css">
+    <script>
+        if(localStorage.getItem("adminactive")==0){
+            location.replace("login.html")
+        }
+    </script>
+</head>
+<body>
+    <div class="topnav">
+        <a href="dashboard.html">Home</a>
+        <a class="active" href="user.html">users</a>
+        <a href="loginsession.html">loginsession</a>
+        <a ><button onclick="logout()">Log out</button></a>
+    </div>
+    <center><h2 id="text">add user</h2></center>
+    <div class="main">
+        <form action="" onsubmit="adddata(event)">
+            <div class="container">
+              <label for="uname"><b>Username</b></label>
+              <input type="text" placeholder="Enter Username" name="uname" id="name" required>
+
+              <label for="uname"><b>email</b></label>
+              <input type="email" placeholder="username" name="email" id="email" required>
+          
+              <label for="psw"><b>Password</b></label>
+              <input type="text" placeholder="Enter Password" name="password" id="password"required>
+
+              <label for="psw"><b>birth date</b></label>
+              <input type="date" placeholder="Enter Password" name="birthdate" id="birthdate" max="2004-01-01" required>
+                  
+              <button type="submit" >Add User</button>
+            </div>
+          </form>
+    </div>
+    <br><br><br>
+    <div class="tabledata">
+        <table id="addtable">
+        </table>
+    </div>
+    <!-- script -->
+    <script src="./js/user.js"></script>
+</body>
+</html>

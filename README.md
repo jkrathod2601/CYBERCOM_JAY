@@ -82,10 +82,18 @@
     <ul>
         <li>10 SQL query</li>
     </ul>
-
     <li>DAY 16</li>
     <ul>
         <li>SQL query practice</li>
+    </ul>
+    <hr><hr>
+    <br>
+    <center><h1>MONTHS 2</h1></center>
+    <br>
+    <hr><hr>
+    <li>DAY 1</li>
+    <ul>
+        <li>JS localStorage task</li>
     </ul>
 
 </ol>

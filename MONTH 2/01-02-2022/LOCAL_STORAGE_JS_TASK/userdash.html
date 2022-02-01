@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/dash.css">
+    <script>
+        if (sessionStorage.getItem("activeuser") == "") {
+            location.replace("login.html")
+        }
+    </script>
+</head>
+
+<body>
+    <style>
+        p,
+        h1 {
+            text-align: center;
+        }
+
+        h1 {
+            color: rebeccapurple;
+        }
+
+        img {
+            margin-left: 20%;
+        }
+    </style>
+    <div class="topnav">
+        <a class="active" href="userdash.html">dashboard</a>
+        <a><button class="" onclick="logout()">log out</button></a>
+    </div>
+    <h1>WELCOME TO CYBERCOM CREATION</h1>
+    <h2>
+        <p id="text"></p>
+    </h2>
+    <div id="bw">
+
+    </div>
+    <!-- script -->
+
+    <script src="./js/userdash.js"></script>
+</body>
+
+</html>
