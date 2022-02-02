@@ -3,10 +3,10 @@ function logout() {
     let id = localStorage.getItem("id")
     let data = localStorage.getItem("about")
     let realdata = JSON.parse(data)
-    // console.log(realdata[1])
+        // console.log(realdata[1])
     realdata[id].logout_date = date
     localStorage.setItem("about", JSON.stringify(realdata))
-    // localStorage.setItem("id", JSON.stringify(id + 1))
+        // localStorage.setItem("id", JSON.stringify(id + 1))
     location.replace("login.html")
     sessionStorage.setItem("activeuser", "")
 }
