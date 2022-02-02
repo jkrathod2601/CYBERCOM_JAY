@@ -11,7 +11,11 @@ const adddata=()=>{
     let password=document.getElementById("password").value
     let birthdate=document.getElementById("birthdate").value
     let y1=JSON.parse(localStorage.getItem("user"))
+    console.log(JSON.parse(localStorage.getItem("admin")).email)
     let checkemail=true
+    if(email==JSON.parse(localStorage.getItem("admin")).email){
+        checkemail=false
+    }
     for (let i in y1){
         if (email==i){
             checkemail=false
