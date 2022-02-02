@@ -30,12 +30,13 @@ let x=localStorage.getItem("adminisadd")
                         console.log(bc)
                         let date=new Date()
                         let id=localStorage.getItem("id")
+                        localStorage.setItem("id", JSON.stringify(parseInt(id) + 1))
                         let dateobject={
                           name:namex,
                           login_time:date,
                           logout_date:""
                         }
-                        bc[id]=dateobject
+                        bc[parseInt(id)+1]=dateobject
                         let dc=JSON.stringify(bc)
                         localStorage.setItem("about",dc)
                         location.replace("userdash.html")
