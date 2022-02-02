@@ -1,3 +1,5 @@
+let date=new Date()
+document.getElementById("birthdate").max=`${date.getFullYear()-18}-0${date.getUTCMonth()}-0${date.getDate()}`
 const logout=()=>{
     localStorage.setItem("adminactive",0)
     location.replace("login.html")
