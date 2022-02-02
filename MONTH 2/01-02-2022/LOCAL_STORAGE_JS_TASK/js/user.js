@@ -54,6 +54,7 @@ const deletei=(email)=>{
     location.replace("user.html")
 }
 const settable=()=>{
+    let date=new Date()
     let y1=JSON.parse(localStorage.getItem("user"))
     let s=`<tr>
         <th>name</th>
