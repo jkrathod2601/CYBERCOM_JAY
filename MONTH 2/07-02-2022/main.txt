@@ -20,7 +20,7 @@ HTTP request methods
      Content-Length: 27
      field1=value1&field2=value2 //message body
 
-3) PUT
+3) PUT (we can also said replace)
  =>The PUT method replaces all current representations of the target resource with the request payload.
  =>http method
  =>all data pass to body to totally update the source
