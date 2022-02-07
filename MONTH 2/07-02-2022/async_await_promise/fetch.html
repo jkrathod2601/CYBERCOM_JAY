@@ -8,13 +8,29 @@
 </head>
 <body>
     <script>
+        //with use os async await
         const datais=async()=>{
-            const data=await fetch("https://pokeapi.co/api/v2/pokemon/ditto")
-            const get_data=await data.json()
-            console.log(get_data.game_indices)
-            console.log("end")
+            try{
+                const data=await fetch("https://pokeapi.co/api/v2/pokemon/ditto")
+                const get_data=await data.json()
+                console.log(get_data.game_indices)
+            }catch(err){
+                console.log(err)
+            }finally{
+                console.log("end")
+            }
         }
         datais()
+        
+        //with use promise
+        //both then is async so we use both of them
+        fetch('https://pokeapi.co/api/v2/pokemon/ditto')
+            .then(response => response.json())
+            .then(data => console.log(data.game_indices))
+            .catch((err)=>{console.log(err)})
+            .finally(()=>{console.log("data is recive")});
+        
     </script>
 </body>
 </html>
+
