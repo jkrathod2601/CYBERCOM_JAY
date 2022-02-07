@@ -1,0 +1,35 @@
+HTTP request methods
+====================
+
+1) GET
+ => The GET method requests a representation of the specified resource. Requests using GET should only retrieve data.
+ => http method
+ => max size = 2,048 character
+ =>data sent in header
+ =>small amount of data
+ ex. http://user?name=jay&age=20 HTTP/1.1
+
+2) POST
+ =>The POST method submits an entity to the specified resource, often causing a change in state or side effects on the server.
+ =>http method
+ =>large amount of data
+
+ ex. POST /test HTTP/1.1
+     Host: foo.example
+     Content-Type: application/x-www-form-urlencoded
+     Content-Length: 27
+     field1=value1&field2=value2 //message body
+
+3) PUT
+ =>The PUT method replaces all current representations of the target resource with the request payload.
+ =>http method
+ =>all data pass to body to totally update the source
+
+4) patch
+=> only updated data sent throw the body
+
+5) delete
+=>delete the object at server location
+
+
+
