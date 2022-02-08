@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        const get_delete=async()=>{
+            try {
+                const response=await axios.delete("https://gitlab.com/api/v4/users/10833514",barear)
+                console.log(response)
+            } catch (error) {
+                console.log(error)
+            }
+        }
+        get_delete()
+    </script>
+</body>
+</html>
