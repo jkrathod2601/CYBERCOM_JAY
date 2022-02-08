@@ -1,0 +1,58 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <!-- csss -->
+    <style>
+        #sub{
+            border:1px solid black
+        }
+    </style>
+
+    <!-- form -->
+    <h1>add data</h1>
+    <form action="" onsubmit="run(event)">
+        <input type="text" id="id" placeholder="id" required/>
+        <input type="text" id="name" placeholder="name" required />
+        <input type="email" id="email" placeholder="email" required />
+        <input type="text" id="gender" placeholder="gender" required />
+        <button>add data</button>
+    </form>
+
+    <!-- delete id -->
+    <h1>delete id</h1>
+    <form action="" onsubmit="delete_id(event)">
+        <input type="text" id="deid" placeholder="id" required/>
+        <button>delete me</button>
+    </form>
+
+    <!-- update -->
+    <h1>update user</h1>
+    <form action="" onsubmit="updateid(event)">
+        <input type="text" id="uid" placeholder="id" required/>
+        <button>update me</button>
+    </form>
+
+    <!-- update form -->
+    <h1>update form</h1>
+    <form action="" onsubmit="uurun(event)">
+        <input type="text" id="uuid" placeholder="id" required/>
+        <input type="text" id="uuname" placeholder="name" required />
+        <input type="email" id="uuemail" placeholder="email" required />
+        <input type="text" id="uugender" placeholder="gender" required />
+        <button>update data</button>
+    </form>
+    <!-- html -->
+    <div id="main">
+        
+    </div>
+    <!-- script -->
+    <script src="./all.js"></script>
+
+</body>
+</html>
