@@ -4,6 +4,7 @@ const addpress = () => {
   location.replace("adddata.html");
 };
 
+// add data
 const adddata = async (event) => {
   event.preventDefault();
   let obj = {
@@ -25,6 +26,8 @@ const adddata = async (event) => {
     console.log(error);
   }
 };
+
+
 
 const get_data = async () => {
   s = ` `;
@@ -53,16 +56,25 @@ const get_data = async () => {
 get_data();
 
 
-
+// update user
 const update=async(id)=>{
     localStorage.setItem("id",id)
     location.replace("update_data.html");
 }
 
+
+// delete user
 const deleteid=async(id)=>{
-    const data=await axios.delete(`https://reqres.in/api/users/${id}`)
-    if(data.status==204){
-        alert("data deletedet successfully")
-        get_data()
+    try {
+        const data=await axios.delete(`https://reqres.in/api/users/${id}`)
+        if(data.status==204){
+            alert("data deletedet successfully")
+            get_data()
+        }else{
+            alert("ERROR FOUND")
+        }
+    } catch (error) {
+        alert(error)
     }
+   
 }
