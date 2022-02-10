@@ -20,7 +20,7 @@ const update_data=()=>{
 update_data()
 
 const update_data_is=async()=>{
-    event.preventDefault()
+    // event.preventDefault()
     let obj={
         first_name:document.getElementById("first_name").value,
         last_name:document.getElementById("last_name").value,
