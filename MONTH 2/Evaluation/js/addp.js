@@ -1,3 +1,4 @@
+sessionStorage.clear()
 // global variable start
 const _api="https://fakestoreapi.com/products/categories"
 const _api_p="https://fakestoreapi.com/products"

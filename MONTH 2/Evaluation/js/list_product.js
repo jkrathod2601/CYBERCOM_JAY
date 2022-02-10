@@ -1,3 +1,4 @@
+sessionStorage.clear()
 // global variable start
 const _api="https://fakestoreapi.com/products"
 const _api_sort="https://fakestoreapi.com/products?sort=desc"

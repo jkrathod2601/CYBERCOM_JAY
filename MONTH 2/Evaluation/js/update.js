@@ -39,6 +39,9 @@ const insert_field=async()=>{
                 await add_cat()
                 document.getElementById("category").value=responce.data.category
             }
+        }else{
+            alert("Sorry pleas first select currect product")
+            location.replace("list_product.html")
         }
     } catch (error) {
         alert(error)
