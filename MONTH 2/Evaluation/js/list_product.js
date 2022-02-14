@@ -73,6 +73,7 @@ const deleteid=async(id)=>{
            const responce=await axios.delete(_api+`/${id}`)
            if(responce.status==200){
                alert("data deleted successfully")
+               _adddatatable.innerHTML=""
                getdata()
            }else{
                alert("facing some error")
