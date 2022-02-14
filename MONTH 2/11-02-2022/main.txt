@@ -1,0 +1,4 @@
+>> Everything inside an ES6 module is private by default, and runs in strict mode (there’s no need for 'use strict').
+>> Public variables, functions and classes are exposed using export.
+>> Exposed modules are called into other modules using import
+>> Modules must be included in your HTML with type="module", which can be an inline or external script tag.
